@@ -1,22 +1,17 @@
-import 'animate.css'
-import logoCoder from './coderhouse-logo.png';
+import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
+import "./components/Footer";
+import "./components/NavBar";
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+//import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://plataforma.coderhouse.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={logoCoder} className="animate__animated App-logo animate__repeat-3" alt="logo" />
-        </a>
-        <h3>Camada 19720</h3>
-        <h4>Juan Pablo Toniolo</h4>
-      </header>
+    <div className="App Site">
+     <NavBar></NavBar>
+     <main className="Site"></main>
+     <Footer></Footer>
     </div>
   );
 }

@@ -1,16 +1,31 @@
 import 'materialize-css/dist/css/materialize.min.css';
+import React, { useEffect } from "react";
+import M from 'materialize-css'; 
 import './App.css';
-import "./components/Footer";
-import "./components/NavBar";
 import NavBar from './components/NavBar'
+import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
-//import Header from "./components/Header";
 
 function App() {
+
+  useEffect(() => {
+    let dropdowns = document.querySelectorAll(".dropdown-trigger");
+    let options = {
+      inDuration: 300,
+      outDuration: 700,
+      hover: true,
+      coverTrigger: false,
+      constrainWidth: false
+    };
+  M.Dropdown.init(dropdowns, options);
+  }, []);
+
   return (
-    <div className="App Site">
+    <div className="App">
      <NavBar></NavBar>
-     <main className="Site"></main>
+     <main className="Site">
+       <ItemListContainer greeting={"Bienvenido a mi e-commerce"}/>
+     </main>
      <Footer></Footer>
     </div>
   );

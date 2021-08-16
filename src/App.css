@@ -54,3 +54,21 @@
     vertical-align: top;
     margin-left: -10px; 
 }
+
+.card img{
+  /*object-fit: contain;*/
+  max-height: 300px;
+}
+
+.card-image{
+  min-height: 300px;
+}
+
+.card-desc{
+  height: 90px;
+  overflow: hidden;
+}
+
+.card{
+  max-width: 300px;
+}

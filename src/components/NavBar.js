@@ -1,7 +1,23 @@
+import React, { useEffect } from "react";
+import M from 'materialize-css'; 
+
 import logo_tienda from '../assets/logo_tienda.png'
 import CartWidget from './CartWidget'
 
-const navbar = () =>{
+const Navbar = () =>{
+
+    useEffect(() => {
+        let dropdowns = document.querySelectorAll(".dropdown-trigger");
+        let options = {
+          inDuration: 300,
+          outDuration: 700,
+          hover: true,
+          coverTrigger: false,
+          constrainWidth: false
+        };
+      M.Dropdown.init(dropdowns, options);
+      }, []);
+
     return(
         <nav className="navbar-material">
             <div className="nav-wrapper">
@@ -37,4 +53,4 @@ const navbar = () =>{
     )
 }
 
-export default navbar
+export default Navbar

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Western Digital 500GB SATA",
+        "description": "Establece las bases para el almacenamiento diario al proporcionar un rendimiento mejorado en comparación con las anteriores generaciones",
+        "price": 6000,
+        "stock": 5,
+        "img": "https://shop.westerndigital.com/content/dam/store/en-us/assets/products/internal-storage/wd-blue-desktop-sata-hdd/gallery/wd-blue-pc-desktop-hard-drive-500gb.png"
+    },
+    {
+        "id": 2,
+        "title": "Procesador Intel Core I9-11900k",
+        "description": "Productividad y entretenimiento, todo disponible en computadoras de escritorio.",
+        "price": 94900,
+        "stock": 2,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_776328-MLA46026783355_052021-O.webp"
+    },
+    {
+        "id": 3,
+        "title": "Memoria RAM Fury DDR4 RGB Negro 8GB",
+        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
+        "price": 7122,
+        "stock": 10,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+    }
+]

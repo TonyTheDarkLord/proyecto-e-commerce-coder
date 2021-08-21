@@ -4,7 +4,7 @@ import ItemList from './ItemList'
 //JSON
 import Prods from '../assets/productos.json'
 
-const itemListContainer = () =>{
+const ItemListContainer = () =>{
 
     const [dataProds, setProductos] = useState([]);
 
@@ -24,4 +24,4 @@ const itemListContainer = () =>{
     )
 }
 
-export default itemListContainer
+export default ItemListContainer

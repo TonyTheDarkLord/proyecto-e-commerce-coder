@@ -72,3 +72,9 @@
 .card{
   max-width: 300px;
 }
+
+.boton-agregar-carrito{
+  margin-top: 10px;
+  display: flex !important;
+  height: 40px !important;
+}

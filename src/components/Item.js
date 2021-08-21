@@ -8,13 +8,12 @@ const Item = ({title,description,price,stock,img}) => {
             <div className="card hoverable">
                 <div className="card-image valign-wrapper">
                 <img src={img} alt=""/>
-                <a className="btn-floating halfway-fab waves-effect waves-light red" href="/#c"><i className="material-icons">add_shopping_cart</i></a>
                 </div>
                 <div className="card-content">
                 <span className="card-title">{title}</span>
                 <p className="card-desc">{description}</p>
                 <h4>${price}</h4>
-                <span>Cantidad : <ItemCount stock={stock}/></span>
+                <span>Cantidad : <ItemCount stock={stock} initial="1"/></span>
                 </div>
             </div>
         </div>

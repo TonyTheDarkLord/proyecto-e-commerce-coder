@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, initial}) => {
 
-    const[ItemCount, setItemCount] = React.useState(1);
+    const[ItemCount, setItemCount] = useState(Number(initial));
 
     const onAdd = () =>{
         setItemCount(ItemCount + 1);
@@ -29,6 +29,9 @@ const ItemCount = ({stock}) => {
             <a className="btn red waves-effect waves-red" onClick={isZero}  href="/#r">-</a>
             <a className="btn disabled" href="/#">{ItemCount}</a>
             <a className="btn red waves-effect waves-red" onClick={checkMax} href="/#a">+</a>
+            <div className="center-align">
+                <a className="btn red waves-effect waves-light boton-agregar-carrito valign-wrapper" href="/#c">Agregar al carrito<i className="material-icons">add_shopping_cart</i></a>
+            </div>
         </>
     )
 }

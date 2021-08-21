@@ -1,9 +1,10 @@
 import './App.css';
 import 'materialize-css/dist/css/materialize.min.css';
 
+import React from 'react'
 import NavBar from './components/NavBar';
-import ItemList from "./components/ItemList";
 import Footer from './components/Footer';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
      <NavBar></NavBar>
      <main className="Site">
        <h3>Productos</h3>
-       <ItemList/>
+       <ItemListContainer/>
      </main>
      <Footer></Footer>
     </div>

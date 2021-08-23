@@ -22,5 +22,45 @@
         "price": 7122,
         "stock": 10,
         "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+    },
+    {
+        "id": 4,
+        "title": "Memoria RAM Fury DDR4 RGB Negro 4GB",
+        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
+        "price": 7122,
+        "stock": 10,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+    },
+    {
+        "id": 5,
+        "title": "Memoria RAM Fury DDR4 RGB Negro 5GB",
+        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
+        "price": 7122,
+        "stock": 10,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+    },
+    {
+        "id": 6,
+        "title": "Memoria RAM Fury DDR4 RGB Negro 6GB",
+        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
+        "price": 7122,
+        "stock": 10,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+    },
+    {
+        "id": 7,
+        "title": "Memoria RAM Fury DDR4 RGB Negro 7GB",
+        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
+        "price": 7122,
+        "stock": 10,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+    },
+    {
+        "id": 8,
+        "title": "Memoria RAM Fury DDR4 RGB Negro 8GB",
+        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
+        "price": 7122,
+        "stock": 10,
+        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
     }
 ]

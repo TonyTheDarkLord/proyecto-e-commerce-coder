@@ -11,7 +11,7 @@ const ItemListContainer = () =>{
     useEffect(() =>{
         new Promise((resolve, reject) => {
             setTimeout(() =>{
-                setProductos(Prods)
+                setProductos(Prods.slice(0,4));
                 resolve(true);
             },2000)
         })
@@ -19,6 +19,7 @@ const ItemListContainer = () =>{
 
     return(
         <>
+            <h3>Productos</h3>
             <ItemList productos={dataProds}/>
         </>
     )

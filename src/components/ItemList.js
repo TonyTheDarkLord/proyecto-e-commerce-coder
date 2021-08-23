@@ -8,6 +8,7 @@ const ItemList = (props) => {
                     return(
                         <Item
                             key={producto.id}
+                            id={producto.id}
                             title={producto.title}
                             img={producto.img}
                             description={producto.description}

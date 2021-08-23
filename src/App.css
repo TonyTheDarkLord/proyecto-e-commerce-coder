@@ -78,3 +78,7 @@
   display: flex !important;
   height: 40px !important;
 }
+
+.detalle-imagen{
+  max-height: 245px;
+}

@@ -6,7 +6,8 @@ const ItemDetail = ({item}) => {
     if (item.id !== 404){
         return (
             <>
-                <div className="col s12">
+                <div className="col s12 m4 l3"></div>
+                <div className="col s12 m4 l6">
                     <div>
                         <h3 className="card-title">{item.title}</h3>
                         <div className="card-image center-align">
@@ -19,6 +20,7 @@ const ItemDetail = ({item}) => {
                         </div>
                     </div>
                 </div>
+                <div className="col s12 m4 l3"></div>
             </>
         );
     } else {

@@ -8,6 +8,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import BadRequest from './components/BadRequest';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import Contacto from './components/Contacto';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
           <Switch>
             <Route path='/' exact component={ItemListContainer}/>
             <Route path='/item/:id' exact component={ItemDetailContainer}/>
+            <Route path='/category/:id' exact component={ItemListContainer}/>
             <Route path='/404' exact component={BadRequest}/>
+            <Route path='/Contacto' exact component={Contacto}/>
           </Switch>
         </main>
         <Footer></Footer>

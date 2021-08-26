@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
 import M from 'materialize-css'; 
+import {Link} from 'react-router-dom'
+
 
 import logo_tienda from '../assets/logo_tienda.png'
 import CartWidget from './CartWidget'
+
+//JSON
+import Categorias from '../assets/categorias.json'
 
 const Navbar = () =>{
 
@@ -21,28 +26,26 @@ const Navbar = () =>{
     return(
         <nav className="navbar-material">
             <div className="nav-wrapper">
-                <a id="logo-container" href="/#" className="brand-logo left"><img src={logo_tienda} alt="logo"/></a><a id="logo-container" href="/#" className="brand-logo text">CompuTar</a>
+                <Link id="logo-container" to="/" className="brand-logo left"><img src={logo_tienda} alt="logo"/></Link><Link id="logo-container" to="/" className="brand-logo text">CompuTar</Link>
                 
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li>
-                        <a href="/#">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                    <a className="dropdown-trigger" href="/#" data-target="dropdown">Productos</a>
-                        <ul id="dropdown" className="dropdown-content">
-                            <li>
-                                <a href="/#">Monitores</a>
+                    <Link className="dropdown-trigger" to="/" data-target="dropdown">Productos</Link>
+                    <ul id="dropdown" className="dropdown-content">
+                    {Categorias.map((categoria)=>{
+                        return(
+                            <li key={categoria.id}>
+                                <Link to={`/category/${categoria.id}`} >{categoria.title}</Link>
                             </li>
-                            <li>
-                                <a href="/#">HDDs</a>
-                            </li>
-                            <li>
-                                <a href="/#">Procesadores</a>
-                            </li>
-                        </ul>
+                        )
+                    })}
+                    </ul>
                     </li>
                     <li>
-                        <a href="/#">Contacto</a>
+                        <Link to="/Contacto">Contacto</Link>
                     </li>
                     <li>
                         <CartWidget cantidad={14}/>

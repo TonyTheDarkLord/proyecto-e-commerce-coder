@@ -82,3 +82,24 @@
 .detalle-imagen{
   max-height: 245px;
 }
+
+.itemDetailRow{
+  margin: 0 !important;
+}
+
+.badReqText{
+  margin: 0;
+  font-size: 8rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.line-clamp {
+  width: 100%;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important; /* number of lines to show */
+}

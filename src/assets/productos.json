@@ -5,6 +5,7 @@
         "description": "Establece las bases para el almacenamiento diario al proporcionar un rendimiento mejorado en comparación con las anteriores generaciones",
         "price": 6000,
         "stock": 5,
+        "category": 2,
         "img": "https://shop.westerndigital.com/content/dam/store/en-us/assets/products/internal-storage/wd-blue-desktop-sata-hdd/gallery/wd-blue-pc-desktop-hard-drive-500gb.png"
     },
     {
@@ -13,6 +14,7 @@
         "description": "Productividad y entretenimiento, todo disponible en computadoras de escritorio.",
         "price": 94900,
         "stock": 2,
+        "category": 3,
         "img": "https://http2.mlstatic.com/D_NQ_NP_776328-MLA46026783355_052021-O.webp"
     },
     {
@@ -21,46 +23,52 @@
         "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
         "price": 7122,
         "stock": 10,
+        "category": 1,
         "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
     },
     {
         "id": 4,
-        "title": "Memoria RAM Fury DDR4 RGB Negro 4GB",
-        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
-        "price": 7122,
+        "title": "Procesador AMD Ryzen 5 1600 AF Zen+",
+        "description": "El procesador para computadoras de escritorio de 12 subprocesos y 6 núcleos de menor consumo de energía de todo el mundo con verdadera inteligencia artificial.",
+        "price": 9000,
         "stock": 10,
-        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+        "category": 3,
+        "img": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_17898_Procesador_AMD_Ryzen_5_1600_AF_Zen__12nm_AM4_Wraith_Stealth_Cooler_187bb9ab-grn.jpg"
     },
     {
         "id": 5,
-        "title": "Memoria RAM Fury DDR4 RGB Negro 5GB",
+        "title": "Memoria Team DDR3 4GB 1600MHz Team Elite Plus Red",
         "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
-        "price": 7122,
+        "price": 2346,
         "stock": 10,
-        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+        "category": 1,
+        "img": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25074_Memoria_Team_DDR3_4GB_1600MHz_Team_Elite_Plus_Red_e3f13781-grn.jpg"
     },
     {
         "id": 6,
-        "title": "Memoria RAM Fury DDR4 RGB Negro 6GB",
-        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
-        "price": 7122,
+        "title": "Memoria OEM DDR4 4GB 2666MHz Value",
+        "description": "CARACTERISTICAS GENERALES /n Capacidad: 4 gb Velocidad: 1600 mhz Tipo: DDR3 Latencia: 11 cl Voltaje: 1.50 v",
+        "price": 2380,
         "stock": 10,
-        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+        "category": 1,
+        "img": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_27006_Memoria_OEM_DDR4_4GB_2666MHz_Value_78310d3b-grn.jpg"
     },
     {
         "id": 7,
-        "title": "Memoria RAM Fury DDR4 RGB Negro 7GB",
-        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
-        "price": 7122,
+        "title": "Memoria Kingston DDR4 4GB 2666MHz KVR26N19S6/4",
+        "description": "ValueRAM's KVR26N19S6/4 is a 512M x 64-bit (4GB) DDR4-2666 CL19 SDRAM (Synchronous DRAM), 1Rx16, memory module, based on four 512M x 16-bit FBGA components. The SPD is programmed to JEDEC standard latency DDR4-2666 timing of 19-19-19 at 1.2V. Each 288-pin DIMM uses gold contact fingers.",
+        "price": 3256,
         "stock": 10,
-        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+        "category": 1,
+        "img": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_17191_Memoria_Kingston_DDR4_4GB_2666MHz_KVR26N19S6_4_6d585519-grn.jpg"
     },
     {
         "id": 8,
-        "title": "Memoria RAM Fury DDR4 RGB Negro 8GB",
-        "description": "Si notás que tu computadora tiene bajo rendimiento o que su capacidad no se adapta a tus necesidades de uso, es momento de renovar su memoria RAM.",
-        "price": 7122,
+        "title": "Disco Solido SSD Externo Team PD 1000 512GB 1000MB/s",
+        "description": "Pasó por pruebas en laboratorios externos y obtuvo la calificación de IP68, lo que significa que actualmente tiene el grado más alto de resistencia al polvo y al agua. Se puede sumergir hasta un metro de profundidad durante 60 minutos y cuenta con aislamiento total contra el polvo e incluso resiste una tormenta de arena.",
+        "price": 11040,
         "stock": 10,
-        "img": "https://http2.mlstatic.com/D_NQ_NP_824085-MLA40927542451_022020-O.webp"
+        "category": 2,
+        "img": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_24737_Disco_Solido_SSD_Externo_Team_PD_1000_512GB_1000MB_s_331e9a70-grn.jpg"
     }
 ]

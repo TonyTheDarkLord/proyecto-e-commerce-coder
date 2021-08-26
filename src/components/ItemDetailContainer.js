@@ -14,13 +14,10 @@ const getItem = (id) =>{
                     resolve(prod);
                 }
             })
-            reject(404);
+            resolve(404);
         },2000)
-    }).then((response) => {   
-        return response;
-    }).catch(e => {
-        return(e);
-    });
+    })
+    
 }
 
 const ItemDetailContainer = ({match}) => {
@@ -50,7 +47,7 @@ const ItemDetailContainer = ({match}) => {
     return (
         <>
           {loading ? <div className="row"> <div className="col s12"><ContentLoader 
-                speed={2}
+                speed={1}
                 width="100%"
                 height="60vh"
                 viewBox="0 0 700 400"
@@ -61,7 +58,7 @@ const ItemDetailContainer = ({match}) => {
                 <rect x="0" y="80" rx="2" ry="2" width="100%" height="100" /> 
                 <rect x="2" y="200" rx="2" ry="2" width="25%" height="65" /> 
                 <rect x="2" y="280" rx="2" ry="2" width="100%" height="40" />
-            </ContentLoader></div></div>: <div className="row"> <ItemDetail item={item}/> </div> }
+            </ContentLoader></div></div>: <div className="row itemDetailRow"> <ItemDetail item={item}/> </div> }
         </>
     )
 }

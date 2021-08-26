@@ -14,7 +14,7 @@ const getItem = (id) =>{
                     resolve(prod);
                 }
             })
-            resolve(404);
+            reject(404);
         },2000)
     })
     
@@ -29,17 +29,13 @@ const ItemDetailContainer = ({match}) => {
 
     useEffect(() => {
         getItem(id).then((result) => {
-            if(result !== 404){
-                setItem(result);
-                setLoading(false);
-            } else {
-                let noItem =  {
-                    id:404
-                }
-                setItem(noItem);
-                setLoading(false);
+            setItem(result);
+        }).catch((error) => {
+            let noItem =  {
+                id:404
             }
-        });
+            setItem(noItem);
+        }).finally(() => setLoading(false))
         
     }, [id])
     

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import M from 'materialize-css'; 
 import {Link} from 'react-router-dom'
 
-
 import logo_tienda from '../assets/logo_tienda.png'
 import CartWidget from './CartWidget'
 

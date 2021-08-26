@@ -10,7 +10,6 @@ import Categorias from '../assets/categorias.json'
 const getCategoryName = (id) =>{
 
     let nombre;
-
     Categorias.forEach((categoria) => {
         if(categoria.id === Number(id)){
             nombre = categoria.title;

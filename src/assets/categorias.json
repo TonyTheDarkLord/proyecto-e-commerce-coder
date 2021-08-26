@@ -10,5 +10,9 @@
     {
         "id": 3,
         "title": "Procesadores"
+    },
+    {
+        "id": 4,
+        "title": "Monitores"
     }
 ]

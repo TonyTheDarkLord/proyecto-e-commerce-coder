@@ -58,7 +58,7 @@ const ItemDetailContainer = ({match}) => {
                 <rect x="0" y="80" rx="2" ry="2" width="100%" height="100" /> 
                 <rect x="2" y="200" rx="2" ry="2" width="25%" height="65" /> 
                 <rect x="2" y="280" rx="2" ry="2" width="100%" height="40" />
-            </ContentLoader></div></div>: <div className="row itemDetailRow"> <ItemDetail item={item}/> </div> }
+            </ContentLoader></div></div>: <div className="row item-detail-row"> <ItemDetail item={item}/> </div> }
         </>
     )
 }

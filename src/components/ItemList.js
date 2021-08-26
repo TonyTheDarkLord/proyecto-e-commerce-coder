@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useLayoutEffect, useState} from 'react'
 import Item from './Item'
+
+const checkItems = (props) =>{
+    if(Object.keys(props.productos).length < Number(4)){
+        return 6
+    }
+}
 
 const ItemList = (props) => {
 
-    let width = 3;
+    const[width,setWidth] = useState(3);
 
-    if(Object.keys(props.productos).length < Number(4)){
-        width = 6
-    }
+    useLayoutEffect(() => {setWidth(checkItems(props))},[props]);
 
     return (
         <div className="row">

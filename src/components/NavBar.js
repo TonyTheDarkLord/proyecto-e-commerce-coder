@@ -20,10 +20,7 @@ const Navbar = () =>{
             total = total + element.cantidad
         });
         setCantidadCarrito(total);
-        console.log(total)
     })
-        
-    console.log(CartItems)
 
     useEffect(() => {
 

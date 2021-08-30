@@ -1,11 +1,12 @@
 import {Link} from 'react-router-dom'
 
-const cartWidget = (props) =>{
+const CartWidget = (props) =>{
+
     return(
-        <Link to="/">
+        <Link to="/cart">
             <i className="material-icons">shopping_cart <span className='badge badge-warning' id='lblCartCount'>{props.cantidad}</span></i>
         </Link>
     )
 }
 
-export default cartWidget
+export default CartWidget

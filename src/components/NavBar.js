@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, {useContext, useEffect, useState} from 'react'
 import M from 'materialize-css'; 
 import {Link} from 'react-router-dom'
+import { ItemsContext } from '../Context';
 
 import logo_tienda from '../assets/logo_tienda.png'
 import CartWidget from './CartWidget'
@@ -10,8 +11,24 @@ import Categorias from '../assets/categorias.json'
 
 const Navbar = () =>{
 
+    const[CartItems] = useContext(ItemsContext);
+    const[cantidadCarrito,setCantidadCarrito] = useState(0);
+
+    const updateCantCarrito = ((CartItems) => {
+        let total = 0;
+        CartItems.forEach(element => {
+            total = total + element.cantidad
+        });
+        setCantidadCarrito(total);
+        console.log(total)
+    })
+        
+    console.log(CartItems)
+
     useEffect(() => {
+
         let dropdowns = document.querySelectorAll(".dropdown-trigger");
+
         let options = {
           inDuration: 300,
           outDuration: 700,
@@ -19,8 +36,12 @@ const Navbar = () =>{
           coverTrigger: false,
           constrainWidth: false
         };
-      M.Dropdown.init(dropdowns, options);
-      }, []);
+        
+        M.Dropdown.init(dropdowns, options);
+
+        updateCantCarrito(CartItems);
+
+    },[CartItems]);
 
     return(
         <nav className="navbar-material">
@@ -47,7 +68,7 @@ const Navbar = () =>{
                         <Link to="/Contacto">Contacto</Link>
                     </li>
                     <li>
-                        <CartWidget cantidad={14}/>
+                        <CartWidget cantidad={cantidadCarrito}/>
                     </li>
                 </ul>
             </div>

@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, action}) => {
 
     const[ItemCount, setItemCount] = useState(initial);
+
+    const cargarOrden = () =>{
+        action(ItemCount);
+    }
 
     const onAdd = () =>{
         setItemCount(ItemCount + 1);
@@ -26,11 +30,11 @@ const ItemCount = ({stock, initial}) => {
 
     return (
         <>
-            <button className="btn red waves-effect waves-red" onClick={isZero} >-</button>
+            <button className="btn red waves-effect waves-red" onClick={isZero}>-</button>
             <button className="btn disabled" href="/#">{ItemCount}</button>
             <button className="btn red waves-effect waves-red" onClick={checkMax} >+</button>
             <div className="center-align">
-                <button className="btn red waves-effect waves-light boton-agregar-carrito valign-wrapper">Agregar al carrito<i className="material-icons">add_shopping_cart</i></button>
+                <button className="btn red waves-effect waves-light boton-agregar-carrito valign-wrapper" onClick={cargarOrden}>Agregar al carrito<i className="material-icons">add_shopping_cart</i></button>
             </div>
         </>
     )

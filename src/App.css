@@ -103,3 +103,10 @@
   -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 2 !important; /* number of lines to show */
 }
+
+.boton-finalizar-compra{
+  margin-top: 10px !important;
+  width: fit-content;
+  display: flex !important;
+  height: 40px !important;
+}

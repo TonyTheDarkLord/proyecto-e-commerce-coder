@@ -1,7 +1,44 @@
-import React, { Redirect } from "react-router-dom";
+import React, {useState, useContext, useEffect} from 'react'
+import { Redirect } from "react-router-dom";
 import ItemCount from './ItemCount'
+import { ItemsContext } from '../Context';
+import {Link} from 'react-router-dom'
 
 const ItemDetail = ({item}) => {
+
+    const[CartItems,setCartItems] = useContext(ItemsContext);
+    const[,setCantCompra] = useState([]);
+    const[updateRender,setUpdateRender] = useState(false);
+
+    const onAdd = ((cantidad) => {
+
+        let alreadyInCart = false;
+
+        CartItems.forEach(elemento =>{
+            if(elemento.id === item.id){
+                elemento.cantidad = elemento.cantidad + cantidad;
+                alreadyInCart = true;
+            }
+        })
+
+        if(!alreadyInCart){
+            setCartItems(CartAnterior => ([...CartAnterior, {'id':item.id,'cantidad':cantidad}]))
+        }
+
+        setCantCompra({'id':item.id,'cantidad':cantidad});
+        setUpdateRender(true);
+
+    })
+
+    useEffect(() => {
+
+        CartItems.forEach(elemento =>{
+            if(elemento.id === item.id){
+               setUpdateRender(true);
+            }
+        })
+    
+    })
 
     if (item.id !== 404){
         return (
@@ -15,7 +52,7 @@ const ItemDetail = ({item}) => {
                         </div>
                         <div className="card-content">
                         <h4>${item.price}</h4>
-                        <span>Cantidad : <ItemCount stock={item.stock} initial={1}/></span>
+                        {updateRender === false ? <span>Cantidad : <ItemCount stock={item.stock} initial={1} action={onAdd}/></span> : <Link className="btn red waves-effect waves-light boton-finalizar-compra valign-wrapper" to="/cart">Terminar Compra<i className="material-icons">shopping_cart</i></Link>}
                         <p className="card-desc">{item.description}</p>
                         </div>
                     </div>

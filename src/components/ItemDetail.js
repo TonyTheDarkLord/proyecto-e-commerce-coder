@@ -6,39 +6,21 @@ import {Link} from 'react-router-dom'
 
 const ItemDetail = ({item}) => {
 
-    const[CartItems,setCartItems] = useContext(ItemsContext);
-    const[,setCantCompra] = useState([]);
-    const[updateRender,setUpdateRender] = useState(false);
+    const[CartItems,addToCart] = useContext(ItemsContext);
+    const[cantCompra,setCantCompra] = useState(0);
 
     const onAdd = ((cantidad) => {
-
-        let alreadyInCart = false;
-
-        CartItems.forEach(elemento =>{
-            if(elemento.id === item.id){
-                elemento.cantidad = elemento.cantidad + cantidad;
-                alreadyInCart = true;
-            }
-        })
-
-        if(!alreadyInCart){
-            setCartItems(CartAnterior => ([...CartAnterior, {'id':item.id,'cantidad':cantidad}]))
-        }
-
-        setCantCompra({'id':item.id,'cantidad':cantidad});
-        setUpdateRender(true);
-
+        setCantCompra(cantidad);
+        addToCart({'id':item.id,'cantidad':cantidad});
     })
 
     useEffect(() => {
-
         CartItems.forEach(elemento =>{
             if(elemento.id === item.id){
-               setUpdateRender(true);
+                setCantCompra(elemento.cantidad);
             }
         })
-    
-    })
+    },[cantCompra, CartItems, item])
 
     if (item.id !== 404){
         return (
@@ -52,7 +34,7 @@ const ItemDetail = ({item}) => {
                         </div>
                         <div className="card-content">
                         <h4>${item.price}</h4>
-                        {updateRender === false ? <span>Cantidad : <ItemCount stock={item.stock} initial={1} action={onAdd}/></span> : <Link className="btn red waves-effect waves-light boton-finalizar-compra valign-wrapper" to="/cart">Terminar Compra<i className="material-icons">shopping_cart</i></Link>}
+                        {cantCompra === 0 ? <span>Cantidad : <ItemCount stock={item.stock} initial={1} action={onAdd}/></span> : <Link className="btn red waves-effect waves-light boton-finalizar-compra valign-wrapper" to="/cart">Terminar Compra<i className="material-icons">shopping_cart</i></Link>}
                         <p className="card-desc">{item.description}</p>
                         </div>
                     </div>

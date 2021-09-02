@@ -8,15 +8,18 @@ const ItemDetail = ({item}) => {
 
     const[CartItems,addToCart] = useContext(ItemsContext);
     const[cantCompra,setCantCompra] = useState(0);
+    const[stockTotal,setStockTotal] = useState(0);
 
     const onAdd = ((cantidad) => {
         setCantCompra(cantidad);
-        addToCart({'id':item.id,'cantidad':cantidad});
+        addToCart({'item':item,'cantidad':cantidad});
     })
 
     useEffect(() => {
+        setStockTotal(item.stock)
         CartItems.forEach(elemento =>{
-            if(elemento.id === item.id){
+            if(elemento.item.id === item.id){
+                setStockTotal(item.stock - elemento.cantidad)
                 setCantCompra(elemento.cantidad);
             }
         })
@@ -34,7 +37,7 @@ const ItemDetail = ({item}) => {
                         </div>
                         <div className="card-content">
                         <h4>${item.price}</h4>
-                        {cantCompra === 0 ? <span>Cantidad : <ItemCount stock={item.stock} initial={1} action={onAdd}/></span> : <Link className="btn red waves-effect waves-light boton-finalizar-compra valign-wrapper" to="/cart">Terminar Compra<i className="material-icons">shopping_cart</i></Link>}
+                        {cantCompra < item.stock ? <span>Cantidad : <ItemCount stock={stockTotal} initial={1} action={onAdd}/></span> : <Link className="btn red waves-effect waves-light boton-finalizar-compra valign-wrapper" to="/cart">Terminar Compra<i className="material-icons">shopping_cart</i></Link>}
                         <p className="card-desc">{item.description}</p>
                         </div>
                     </div>

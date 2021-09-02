@@ -6,6 +6,7 @@ const ItemCount = ({stock, initial, action}) => {
 
     const cargarOrden = () =>{
         action(ItemCount);
+        setItemCount(initial);
     }
 
     const onAdd = () =>{

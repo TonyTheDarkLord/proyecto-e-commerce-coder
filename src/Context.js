@@ -11,20 +11,19 @@ const ItemsProvider = ({children}) => {
         let alreadyInCart = false;
 
         CartItems.forEach(elemento =>{
-            if(elemento.id === producto.id){
+            if(elemento.item.id === producto.item.id){
                 elemento.cantidad = elemento.cantidad + producto.cantidad;
                 alreadyInCart = true;
             }
         })
 
         if(!alreadyInCart){
-            setCartItems(CartAnterior => ([...CartAnterior, {'id':producto.id,'cantidad':producto.cantidad}]))
+            setCartItems(CartAnterior => ([...CartAnterior, {'item':producto.item,'cantidad':producto.cantidad}]))
         }
-
     })
 
     const onRemoveFromCart = ((e) => {
-        setCartItems(CartItems.filter(item => item.id !== Number(e.currentTarget.value)));
+        setCartItems(CartItems.filter(item => item.item.id !== Number(e.currentTarget.value)));
     })
 
     const clearCart = (() => {

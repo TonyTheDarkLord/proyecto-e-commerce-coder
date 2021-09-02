@@ -18,7 +18,9 @@ const ItemsProvider = ({children}) => {
         })
 
         if(!alreadyInCart){
-            setCartItems(CartAnterior => ([...CartAnterior, {'item':producto.item,'cantidad':producto.cantidad}]))
+            setCartItems(CartAnterior => ([...CartAnterior, {'item':producto.item,'cantidad':producto.cantidad}]));
+        } else {
+            setCartItems(CartAnterior => ([...CartAnterior]));
         }
     })
 

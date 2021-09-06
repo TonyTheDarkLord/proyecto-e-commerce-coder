@@ -6,24 +6,32 @@ import {Link} from 'react-router-dom'
 
 const ItemDetail = ({item}) => {
 
-    const[CartItems,addToCart] = useContext(ItemsContext);
+    const context = useContext(ItemsContext);
     const[cantCompra,setCantCompra] = useState(0);
     const[stockTotal,setStockTotal] = useState(0);
+    const[RenderCount,setRenderCount] = useState(true);
 
     const onAdd = ((cantidad) => {
         setCantCompra(cantidad);
-        addToCart({'item':item,'cantidad':cantidad});
+        console.log(cantCompra)
+        context.addToCart({'item':item,'cantidad':cantidad});
+        setRenderCount(false)
     })
 
     useEffect(() => {
         setStockTotal(item.stock)
-        CartItems.forEach(elemento =>{
+        context.CartItems.forEach(elemento =>{
             if(elemento.item.id === item.id){
                 setStockTotal(item.stock - elemento.cantidad)
                 setCantCompra(elemento.cantidad);
+                if(elemento.cantidad < item.stock){
+                    setRenderCount(true)
+                }else {
+                    setRenderCount(false)
+                }
             }
         })
-    },[cantCompra, CartItems, item])
+    },[])
 
     if (item.id !== 404){
         return (
@@ -37,7 +45,7 @@ const ItemDetail = ({item}) => {
                         </div>
                         <div className="card-content">
                         <h4>${item.price}</h4>
-                        {cantCompra < item.stock ? <span>Cantidad : <ItemCount stock={stockTotal} initial={1} action={onAdd}/></span> : <Link className="btn red waves-effect waves-light boton-finalizar-compra valign-wrapper" to="/cart">Terminar Compra<i className="material-icons">shopping_cart</i></Link>}
+                        {RenderCount ? <span>Cantidad : <ItemCount stock={stockTotal} initial={1} action={onAdd}/></span> : <Link className="btn red waves-effect waves-light boton-finalizar-compra valign-wrapper" to="/cart">Terminar Compra<i className="material-icons">shopping_cart</i></Link>}
                         <p className="card-desc">{item.description}</p>
                         </div>
                     </div>

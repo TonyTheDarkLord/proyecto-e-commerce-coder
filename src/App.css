@@ -135,3 +135,17 @@
   display: inline-flex;
   vertical-align: top;
 }
+
+.small{
+  height: fit-content !important;
+  display: block !important;
+  padding-right: 10px !important;
+}
+
+.boton-clean{
+  margin-top: 18px !important;
+}
+
+.total{
+  margin-top: 18px !important;
+}

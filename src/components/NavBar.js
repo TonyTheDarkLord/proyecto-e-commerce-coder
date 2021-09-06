@@ -11,18 +11,18 @@ import Categorias from '../assets/categorias.json'
 
 const Navbar = () =>{
 
-    const[CartItems] = useContext(ItemsContext);
+    const context  = useContext(ItemsContext);
     const[cantidadCarrito,setCantidadCarrito] = useState(0);
 
-    const updateCantCarrito = ((CartItems) => {
-        let total = 0;
-        CartItems.forEach(element => {
-            total = total + element.cantidad
-        });
-        setCantidadCarrito(total);
-    })
-
     useEffect(() => {
+
+        const updateCantCarrito = ((CartItems) => {
+            let total = 0;
+            context.CartItems.forEach(element => {
+                total = total + element.cantidad
+            });
+            setCantidadCarrito(total);
+        })
 
         let dropdowns = document.querySelectorAll(".dropdown-trigger");
 
@@ -36,9 +36,9 @@ const Navbar = () =>{
         
         M.Dropdown.init(dropdowns, options);
 
-        updateCantCarrito(CartItems);
+        updateCantCarrito(context.CartItems);
 
-    },[CartItems]);
+    },[context.CartItems]);
 
     return(
         <nav className="navbar-material">
@@ -64,9 +64,7 @@ const Navbar = () =>{
                     <li>
                         <Link to="/Contacto">Contacto</Link>
                     </li>
-                    <li>
-                        <CartWidget cantidad={cantidadCarrito}/>
-                    </li>
+                    {cantidadCarrito !== 0 ? <li><CartWidget cantidad={cantidadCarrito}/></li> : <li></li>}
                 </ul>
             </div>
         </nav>

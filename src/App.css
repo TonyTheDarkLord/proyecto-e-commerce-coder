@@ -122,6 +122,19 @@
   height: 300px;
 }
 
+@media (max-width: 993px) {
+  .card.horizontal {
+    max-height: none !important;
+    height: auto !important; } 
+  .line-clamp.one-line{
+    -webkit-line-clamp: unset !important;
+  }
+  #lblCartCount{
+    margin-left: 10px;
+    min-width: 2rem;
+  }
+  }
+
 .card-image.cart{
   max-width: 300px !important;
   width: 300px !important;
@@ -148,4 +161,12 @@
 
 .total{
   margin-top: 18px !important;
+}
+
+.logo-side{
+  padding-left: 32px;
+}
+
+.side-header{
+  background-color: black;
 }

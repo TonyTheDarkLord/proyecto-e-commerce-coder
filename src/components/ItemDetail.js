@@ -31,6 +31,7 @@ const ItemDetail = ({item}) => {
                 }
             }
         })
+        // eslint-disable-next-line
     },[])
 
     if (item.id !== 404){

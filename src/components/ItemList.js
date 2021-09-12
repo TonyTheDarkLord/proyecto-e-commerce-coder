@@ -2,14 +2,18 @@ import React, {useLayoutEffect, useState} from 'react'
 import Item from './Item'
 
 const checkItems = (props) =>{
-    if(Object.keys(props.productos).length < Number(4)){
+    if(Object.keys(props.productos).length === Number(2)){
         return 6
     }
+    if(Object.keys(props.productos).length === Number(1)){
+        return 12
+    }
+    
 }
 
 const ItemList = (props) => {
 
-    const[width,setWidth] = useState(3);
+    const[width,setWidth] = useState(6);
 
     useLayoutEffect(() => {setWidth(checkItems(props))},[props]);
 

@@ -1,10 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 
 const Item = ({id,title,price,img,responsive}) => {
+
+    const [condRend,setCondRend] = useState(true)
+
+    useEffect(() =>{
+        if(responsive===undefined){
+            setCondRend(false)
+        } else {
+            setCondRend(true)
+        }
+    })
+
     return (
         <>
-        <div className={responsive === 6 ? "col s12 m6 l6" : "col s12 m6 l3"}>
+        <div className={condRend ? "col s12 m"+responsive+" l"+responsive : "col s12 m6 l3"}>
             <div className="card hoverable">
                 <div className="card-image valign-wrapper">
                 <img src={img} alt=""/>

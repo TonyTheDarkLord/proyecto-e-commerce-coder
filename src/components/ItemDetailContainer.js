@@ -1,24 +1,10 @@
 import React, {useState,useEffect} from 'react'
 import ContentLoader from 'react-content-loader'
-
-//JSON
-import Prods from '../assets/productos.json'
 import ItemDetail from './ItemDetail'
 
-const getItem = (id) =>{
-
-    return new Promise((resolve, reject) => {
-        setTimeout(() =>{
-            Prods.forEach( prod =>{
-                if(prod.id === Number(id)){
-                    resolve(prod);
-                }
-            })
-            reject(404);
-        },2000)
-    })
-    
-}
+//Firebase
+import {db} from './Firebase'
+import { getDoc, doc } from "firebase/firestore"
 
 const ItemDetailContainer = ({match}) => {
 
@@ -26,6 +12,31 @@ const ItemDetailContainer = ({match}) => {
     const [loading,setLoading] = useState(true);
 
     let id = match.params.id;
+
+    /* const itemExists = async(id) =>{
+
+        return new Promise((resolve, reject) => {
+            getItem(id).then(result => {
+                setItem(result)
+                if(result.id !== undefined){
+                    resolve(result)
+                } else {
+                    reject(404);
+                }
+            })
+        })
+        
+    } */
+    
+    const getItem = async(id) =>{
+        const snap = await getDoc(doc(db, 'productos', id))
+        if (snap.exists()) {
+            return {id : id ,...snap.data()}
+        } else {
+            PromiseRejectionEvent(404)
+        }
+    
+    }
 
     useEffect(() => {
         getItem(id).then((result) => {

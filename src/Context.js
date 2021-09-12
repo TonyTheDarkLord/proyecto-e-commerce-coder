@@ -25,7 +25,7 @@ const ItemsProvider = ({children}) => {
     })
 
     const onRemoveFromCart = ((e) => {
-        setCartItems(CartItems.filter(item => item.item.id !== Number(e.currentTarget.value)));
+        setCartItems(CartItems.filter(item => item.item.id !== e.currentTarget.value));
     })
 
     const clearCart = (() => {

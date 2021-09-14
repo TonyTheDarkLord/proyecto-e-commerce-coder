@@ -5,13 +5,13 @@ const Item = ({id,title,price,img,responsive}) => {
 
     const [condRend,setCondRend] = useState(true)
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() =>{
         if(responsive===undefined){
             setCondRend(false)
         } else {
             setCondRend(true)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     })
 
     return (

@@ -11,6 +11,7 @@ const Item = ({id,title,price,img,responsive}) => {
         } else {
             setCondRend(true)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     })
 
     return (

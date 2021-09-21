@@ -7,6 +7,9 @@ import ContentLoader from 'react-content-loader'
 const Success = ({match}) => {
 
     let id = match.params.id
+    const [cantidad,setCantidad] = useState(0)
+    const [total,setTotal] = useState(0)
+    const [nombre,setNombre] = useState("")
 
     const [existe,setExiste] = useState(true);
     const [loading,setLoading] = useState(true);
@@ -15,6 +18,9 @@ const Success = ({match}) => {
     useEffect((async() => {
         const snap = await getDoc(doc(db, 'orders', id))
         if (snap.exists()) {
+            setCantidad(snap.data().items.map(item => item.cantidad).reduce((x,y) => x + y))
+            setTotal(snap.data().total)
+            setNombre(snap.data().buyer.name)
             setExiste(true)
             setLoading(false)
         } else {
@@ -43,7 +49,10 @@ const Success = ({match}) => {
                     <div className="row card wide padding-15">
                         <h4>Datos de la compra</h4>
                         <hr/>
-                        <h4>ID: #{id}</h4>
+                        <h4>ID: <Link to={"/success/"+id}>#{id}</Link></h4>
+                        <h4>Total: $ {total}</h4>
+                        <h4>Cantidad de productos: {cantidad}</h4>
+                        <h4>A nombre de: {nombre}</h4>
                     </div>
                     <h4><Link to="/"> ← Volver al Inicio</Link></h4>
                 </div>

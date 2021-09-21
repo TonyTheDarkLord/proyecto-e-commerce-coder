@@ -10,15 +10,14 @@ const Checkout = () => {
 
     const context = useContext(ItemsContext);
     const [loading,setLoading] = useState(false);
-    const [items,setItems] = useState([]);
-    const [buyer,setBuyer] = useState({});
     const [compra,setCompra] = useState(false);
     const [id,setId] = useState(undefined);
 
-    const doCheckout = async() =>{
+    const doCheckout = async(buyer) =>{
+        let items = []
         setLoading(true)
         let today = new Date()
-        context.CartItems.map((obj) => setItems([...items, {'id': obj.item.id, 'title': obj.item.title, 'price': obj.item.price,'cantidad': obj.cantidad}]));
+        context.CartItems.map((obj) => items = [...items, {'id': obj.item.id, 'title': obj.item.title, 'price': obj.item.price,'cantidad': obj.cantidad}]);
         const docRef = await addDoc(collection(db, "orders"), {'buyer' : buyer,'items' : items,'date' : today,'total' : context.total});
         setId(docRef.id);
         setCompra(true)
@@ -27,8 +26,8 @@ const Checkout = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setBuyer({'name':event.target[0].value + ", " + event.target[1].value, 'phone': event.target[2].value, 'email': event.target[3].value});
-        doCheckout();
+        let buyer = {'name':event.target[0].value + ", " + event.target[1].value, 'phone': event.target[2].value, 'email': event.target[3].value}
+        doCheckout(buyer);
     }
 
 

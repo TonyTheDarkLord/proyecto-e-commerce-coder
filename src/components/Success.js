@@ -11,6 +11,7 @@ const Success = ({match}) => {
     const [existe,setExiste] = useState(true);
     const [loading,setLoading] = useState(true);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect((async() => {
         const snap = await getDoc(doc(db, 'orders', id))
         if (snap.exists()) {

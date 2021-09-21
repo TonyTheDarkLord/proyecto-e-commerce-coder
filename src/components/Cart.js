@@ -6,6 +6,7 @@ const Cart = () => {
 
     const context = useContext(ItemsContext);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         context.setTotal(context.CartItems.length > 0 && context.CartItems
             .map((obj) => obj.item.price*obj.cantidad)

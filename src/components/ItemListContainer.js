@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import Loader from './Loader'
 
 //Firebase
-import {db} from './Firebase'
+import {db} from '../services/Firebase'
 import { collection, query, where, getDocs, limit } from "firebase/firestore"
 
 const getCategoryName = async(id) =>{

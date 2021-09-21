@@ -12,6 +12,8 @@ import Cart from './components/Cart';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import BadRequest from './components/BadRequest';
+import Checkout from './components/Checkout';
+import Success from './components/Success';
 
 import Contacto from './components/Contacto';
 
@@ -29,6 +31,9 @@ function App() {
               <Route path='/404' exact component={BadRequest}/>
               <Route path='/Contacto' exact component={Contacto}/>
               <Route path='/cart' exact component={Cart}/>
+              <Route path='/checkout' exact component={Checkout}/>
+              <Route path='/success/:id' exact component={Success}/>
+              <Route path='/success' exact component={ItemListContainer}/>
             </Switch>
           </main>
           <Footer></Footer>

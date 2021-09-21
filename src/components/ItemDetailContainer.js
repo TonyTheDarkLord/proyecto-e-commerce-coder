@@ -3,7 +3,7 @@ import ContentLoader from 'react-content-loader'
 import ItemDetail from './ItemDetail'
 
 //Firebase
-import {db} from './Firebase'
+import {db} from '../services/Firebase'
 import { getDoc, doc } from "firebase/firestore"
 
 const ItemDetailContainer = ({match}) => {
@@ -12,21 +12,6 @@ const ItemDetailContainer = ({match}) => {
     const [loading,setLoading] = useState(true);
 
     let id = match.params.id;
-
-    /* const itemExists = async(id) =>{
-
-        return new Promise((resolve, reject) => {
-            getItem(id).then(result => {
-                setItem(result)
-                if(result.id !== undefined){
-                    resolve(result)
-                } else {
-                    reject(404);
-                }
-            })
-        })
-        
-    } */
     
     const getItem = async(id) =>{
         const snap = await getDoc(doc(db, 'productos', id))

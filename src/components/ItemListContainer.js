@@ -34,7 +34,7 @@ const ItemListContainer = ({match}) =>{
         if(codigo!==undefined){
             q = query(collection(db, "productos"), where("category", "==", Number(codigo)));
         } else {
-            q = query(collection(db, "productos"), limit(4));
+            q = query(collection(db, "productos"), where("stock", ">", Number(0)), limit(4));
         }
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {

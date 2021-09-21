@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import { Redirect } from "react-router-dom";
 
 import {db} from '../services/Firebase'
-import { collection, addDoc } from "firebase/firestore"
+import { collection, addDoc, getDoc , doc, updateDoc } from "firebase/firestore"
 
 const Checkout = () => {
 
@@ -19,9 +19,20 @@ const Checkout = () => {
         let today = new Date()
         context.CartItems.map((obj) => items = [...items, {'id': obj.item.id, 'title': obj.item.title, 'price': obj.item.price,'cantidad': obj.cantidad}]);
         const docRef = await addDoc(collection(db, "orders"), {'buyer' : buyer,'items' : items,'date' : today,'total' : context.total});
+        ajustarStock(items)
         setId(docRef.id);
         setCompra(true)
         context.clearCart();
+    }
+
+    const ajustarStock = (items) =>{
+        items.map(async(item) => {
+            const docRef = doc(db, "productos", item.id)
+            const snap = await getDoc(doc(db, 'productos', item.id))
+            let nuevoStock = snap.data().stock - item.cantidad
+            await updateDoc(docRef,{stock:nuevoStock});
+        }
+        )
     }
 
     const handleSubmit = (event) => {

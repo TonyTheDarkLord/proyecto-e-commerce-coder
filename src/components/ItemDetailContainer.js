@@ -16,7 +16,11 @@ const ItemDetailContainer = ({match}) => {
     const getItem = async(id) =>{
         const snap = await getDoc(doc(db, 'productos', id))
         if (snap.exists()) {
-            return {id : id ,...snap.data()}
+            if(snap.data().stock > 0){
+                return {id : id ,...snap.data()}
+            }else {
+                PromiseRejectionEvent(404)
+            }
         } else {
             PromiseRejectionEvent(404)
         }

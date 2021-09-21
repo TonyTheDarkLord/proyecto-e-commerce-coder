@@ -20,6 +20,7 @@ const ItemList = (props) => {
     return (
         <div className="row">
                 {props.productos.map((producto) =>{
+                    if(producto.stock>0){
                     return(
                         <Item
                             key={producto.id}
@@ -32,6 +33,8 @@ const ItemList = (props) => {
                             responsive={width}
                         />
                     );
+                }
+                return(undefined)
                 })}
         </div>
     )

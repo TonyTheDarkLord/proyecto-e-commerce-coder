@@ -11,7 +11,7 @@ const Cart = () => {
         context.setTotal(context.CartItems.length > 0 && context.CartItems
             .map((obj) => obj.item.price*obj.cantidad)
             .reduce((x,y) => x + y))
-    },[context.CartItems])
+    },[context])
 
 
     return (

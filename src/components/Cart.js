@@ -53,7 +53,7 @@ const Cart = () => {
                 </div>
                 <div className="col s12 m6">
                     <div className="center-align total">
-                        <Link className="btn red waves-effect waves-light valign-wrapper boton-buy" to="/checkout">Finalizar Compra</Link>
+                        <Link className="btn red waves-effect waves-light valign-wrapper boton-buy" to="/checkout">Finalizar Compra <i className="material-icons">arrow_forward_ios</i></Link>
                     </div>
                 </div>
             </> : <><h2>Su Carrito esta vacio</h2><h4><Link to="/"> ← Volver al Inicio</Link></h4></>}

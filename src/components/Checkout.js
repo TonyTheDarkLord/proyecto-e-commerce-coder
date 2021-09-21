@@ -36,13 +36,15 @@ const Checkout = () => {
         <>
         {context.CartItems.length > 0 ? <>{ !compra ? <>
         <h3>Finalizar Compra</h3>
-        <h6><Link to="/cart">  ←  Volver al carrito</Link></h6>
             <div>
                 <div className="row">
                 <div className="col s12 m4 l2"></div>
                     <form className="col s12 m4 l8" onSubmit={handleSubmit}>
-                    <div className="row card wide">
-                        <br className="padding-10"></br>
+                    <div className="row card wide padding-15">
+                        <div className="wide">
+                            <h4>Datos de la compra</h4>
+                            <hr/>
+                        </div>
                         <div className="input-field col s6">
                         <i className="material-icons prefix">account_circle</i>
                         <input id="nombre" type="text" className="validate" required/>
@@ -67,6 +69,7 @@ const Checkout = () => {
                         </div>
                         <br/>
                     </div>
+                    <h4><Link to="/cart">  ←  Volver al carrito</Link></h4>
                     </form>
                 </div>
                 <div className="col s12 m4 l2"></div>

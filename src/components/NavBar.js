@@ -6,16 +6,29 @@ import { ItemsContext } from '../Context';
 import logo_tienda from '../assets/logo_tienda.png'
 import CartWidget from './CartWidget'
 
-//JSON
-import Categorias from '../assets/categorias.json'
+//Firebase
+import {db} from '../services/Firebase'
+import { collection, query, getDocs } from "firebase/firestore"
 
 const Navbar = () =>{
 
     const context  = useContext(ItemsContext);
     const[cantidadCarrito,setCantidadCarrito] = useState(0);
+    const[categorias,setCategorias] = useState([]);
+
+    const getCategories = async() =>{
+
+        const cats = [];
+        const q = query(collection(db, "categorias"));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+                cats.push({id:doc.id,title:doc.data().title})
+        });
+        setCategorias(cats);
+    }
 
     useEffect(() => {
-
+        getCategories()
         const updateCantCarrito = ((CartItems) => {
             let total = 0;
             context.CartItems.forEach(element => {
@@ -62,7 +75,8 @@ const Navbar = () =>{
                     <li>
                     <Link className="dropdown-trigger" to="/" data-target="dropdown">Productos</Link>
                     <ul id="dropdown" className="dropdown-content">
-                    {Categorias.map((categoria)=>{
+                    {categorias.map((categoria)=>{
+                        console.log(categoria)
                         return(
                             <li key={categoria.id}>
                                 <Link to={`/category/${categoria.id}`} >{categoria.title}</Link>
@@ -94,7 +108,7 @@ const Navbar = () =>{
                         <li key={0}>
                             <Link to="/">Productos</Link>
                         </li>
-                        {Categorias.map((categoria)=>{
+                        {categorias.map((categoria)=>{
                             return(
                                 <li key={categoria.id}>
                                     <Link to={`/category/${categoria.id}`} >{categoria.title}</Link>

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {db} from '../services/Firebase'
 import { getDoc, doc } from "firebase/firestore"
 import ContentLoader from 'react-content-loader'
+import NumberFormat from 'react-number-format'
 
 const Success = ({match}) => {
 
@@ -50,7 +51,7 @@ const Success = ({match}) => {
                         <h4>Datos de la compra</h4>
                         <hr/>
                         <h4>ID: <Link to={"/success/"+id}>#{id}</Link></h4>
-                        <h4>Total: $ {total}</h4>
+                        <h4>Total: <NumberFormat key={id} value={total} thousandSeparator={"."} decimalSeparator={","} displayType={"text"} prefix={'$'}/></h4>
                         <h4>Cantidad de productos: {cantidad}</h4>
                         <h4>A nombre de: {nombre}</h4>
                     </div>

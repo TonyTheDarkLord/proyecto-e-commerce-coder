@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import ItemCount from './ItemCount'
 import { ItemsContext } from '../Context';
 import {Link} from 'react-router-dom'
+import NumberFormat from 'react-number-format'
 
 const ItemDetail = ({item}) => {
 
@@ -45,7 +46,7 @@ const ItemDetail = ({item}) => {
                         <img className="detalle-imagen" src={item.img} alt=""/>
                         </div>
                         <div className="card-content">
-                        <h4>${item.price}</h4>
+                        <h4><NumberFormat key={item.id} value={item.price} thousandSeparator={"."} decimalSeparator={","} displayType={"text"} prefix={'$'}/></h4>
                         {RenderCount ? <span>Cantidad : <ItemCount stock={stockTotal} initial={1} action={onAdd}/></span> : <Link className="btn red waves-effect waves-light boton-finalizar-compra valign-wrapper" to="/cart">Terminar Compra<i className="material-icons">shopping_cart</i></Link>}
                         <p className="card-desc">{item.description}</p>
                         </div>

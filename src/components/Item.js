@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import NumberFormat from 'react-number-format'
 
 const Item = ({id,title,price,img,responsive}) => {
 
@@ -23,7 +24,7 @@ const Item = ({id,title,price,img,responsive}) => {
                 </div>
                 <div className="card-content">
                 <span className="card-title line-clamp">{title}</span>
-                <h4>${price}</h4>
+                <h4><NumberFormat key={id} value={price} thousandSeparator={"."} decimalSeparator={","} displayType={"text"} prefix={'$'}/></h4>
                     <Link className="btn red waves-effect waves-red" to={`/item/${id}`} >Ver Producto</Link>
                 </div>
             </div>

@@ -8,8 +8,8 @@ Para brindarle vida al proyecto utilice materialize-css, react-number-format y r
 
 ## Screenshots
 
-![Pantalla principal](https://imgur.com/a/SgX6xf0)
-![Pantalla producto](https://imgur.com/a/9YCvI5H)
-![Pantalla carrito](https://imgur.com/a/cC2vbr5)
-![Pantalla checkout](https://imgur.com/a/t1mGAjU)
-![Pantalla success](https://imgur.com/a/YC82JCn)
+![Pantalla principal](https://i.imgur.com/5BiDh2n.png)
+![Pantalla producto](https://i.imgur.com/5JJItc5.png)
+![Pantalla carrito](https://i.imgur.com/3lpfa8K.png)
+![Pantalla checkout](https://i.imgur.com/fxRelA4.png)
+![Pantalla success](https://i.imgur.com/ODls5oz.png)

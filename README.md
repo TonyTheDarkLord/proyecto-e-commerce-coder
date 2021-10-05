@@ -16,3 +16,4 @@ Ademas de las ya mencionadas utilice emailjs-com la cual me permitio de manera s
 ![Pantalla success](https://i.imgur.com/ODls5oz.png)
 ![Pantalla error](https://i.imgur.com/PQDJh6V.png)
 ![Pantalla contacto](https://i.imgur.com/JjjzGRp.png)
+![Pantalla error](https://i.imgur.com/9FdIJGf.png)

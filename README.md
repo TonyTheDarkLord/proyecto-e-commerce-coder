@@ -5,6 +5,7 @@ Mi e-commerce, esta pensado para una pagina de ventar de articulos de computacio
 ## Dependencias(NPM) utilizadas
 
 Para brindarle vida al proyecto utilice materialize-css, react-number-format y react-content-loader, el primero me brinda la estructura y estilos generales de la pagina para agilizar la creacion de la pagina, react-number-format lo utilizo para formatear los precios y que queden mas esteticos y legibles, y el tercero brinda los placeholders animados que utilizo cuando se generan los tiempos de espera al solicitar los datos a firebase, de esta forma le hago saber al usuario que la pagina esta procesando la solicitud y brindo un feedback visual.
+Ademas de las ya mencionadas utilice emailjs-com la cual me permitio de manera sencilla y agil manejar el formulario de contacto para que envie un correo real.
 
 ## Screenshots
 

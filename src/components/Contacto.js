@@ -25,12 +25,10 @@ const Contacto = () => {
             {REACT_APP_USERID_SENDER}.REACT_APP_USERID_SENDER
             )
             .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
                 setResponse(false)
                 setMensaje(true)
             })
             .catch((err) => {
-                console.log('FAILED...', err);
                 setResponse(false)
             });
         };

@@ -76,7 +76,6 @@ const Navbar = () =>{
                     <Link className="dropdown-trigger" to="/" data-target="dropdown">Productos</Link>
                     <ul id="dropdown" className="dropdown-content">
                     {categorias.map((categoria)=>{
-                        console.log(categoria)
                         return(
                             <li key={categoria.id}>
                                 <Link to={`/category/${categoria.id}`} >{categoria.title}</Link>

@@ -37,8 +37,21 @@ const Checkout = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let buyer = {'name':event.target[0].value + ", " + event.target[1].value, 'phone': event.target[2].value, 'email': event.target[3].value}
-        doCheckout(buyer);
+        
+        if(event.target[3].value!==event.target[4].value){
+            event.target[4].setCustomValidity('Las direcciones no coinciden.');
+            event.target[4].classList.add('invalid')
+        } else {
+            event.target[4].classList.remove('invalid')
+            let buyer = {'name':event.target[0].value + ", " + event.target[1].value, 'phone': event.target[2].value, 'email': event.target[3].value}
+            doCheckout(buyer);
+        }
+        
+        
+    }
+
+    const handleInputChange = (event) => {
+        event.target.setCustomValidity('');
     }
 
 
@@ -66,13 +79,18 @@ const Checkout = () => {
                         </div>
                         <div className="input-field col s12">
                         <i className="material-icons prefix">phone</i>
-                        <input id="icon_telephone" type="tel" className="validate" required/>
-                        <label htmlFor="icon_telephone">Telefono</label>
+                        <input id="telephone" type="tel" className="validate" required/>
+                        <label htmlFor="telephone">Telefono</label>
                         </div>
                         <div className="input-field col s12">
                         <i className="material-icons prefix">email</i>
-                        <input id="icon_telephone" type="email" className="validate" required/>
-                        <label htmlFor="icon_telephone">Email</label>
+                        <input id="mail" type="email" className="validate" /*onChange={handleInputChange}*/ required/>
+                        <label htmlFor="mail">Email</label>
+                        </div>
+                        <div className="input-field col s12">
+                        <i className="material-icons prefix">email</i>
+                        <input id="mail_1" type="email" className="validate" onChange={handleInputChange} required/>
+                        <label htmlFor="mail_1">Email</label>
                         </div>
                         <div className="center-align total">
                             {!loading ? <button className="btn red waves-effect waves-light valign-wrapper" type="submit">Realizar Pedido</button>:<div className="center-align"><div className="progress ancho"><div className="indeterminate"></div></div></div>}

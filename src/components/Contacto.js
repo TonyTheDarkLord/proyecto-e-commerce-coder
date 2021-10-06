@@ -52,23 +52,23 @@ const Contacto = () => {
                 <form onSubmit={onSubmit}>
                     <div className="row">
                         <div className="input-field col s6">
-                        <input placeholder="Juan Carlos" name='to_name' type="text" className="validate" value={toSend.to_name} onChange={handleChange} required/>
+                        <input /*placeholder="Juan Carlos"*/ name='to_name' type="text" className="validate" value={toSend.to_name} onChange={handleChange} required/>
                         <label for="first_name">Nombre</label>
                         </div>
                         <div className="input-field col s6">
-                        <input id="last_name" placeholder="Betiro" type="text" className="validate" required/>
+                        <input id="last_name" /*placeholder="Betiro"*/ type="text" className="validate" required/>
                         <label for="last_name">Apellido</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                            <input name="reply_to" placeholder="jcbetiro@ejemplo.com" value={toSend.reply_to} onChange={handleChange} type="email" className="validate" required/>
+                            <input name="reply_to" /*placeholder="jcbetiro@ejemplo.com"*/ value={toSend.reply_to} onChange={handleChange} type="email" className="validate" required/>
                             <label for="email">Email</label>
                         </div>
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
-                        <textarea name="message" placeholder="Tu mensaje." value={toSend.message} onChange={handleChange} className="materialize-textarea" required></textarea>
+                        <textarea name="message" /*placeholder="Tu mensaje."*/ value={toSend.message} onChange={handleChange} className="materialize-textarea" required></textarea>
                         <label for="textarea1">Mensaje</label>
                         </div>
                     </div>

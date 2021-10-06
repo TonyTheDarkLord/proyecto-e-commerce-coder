@@ -27,6 +27,10 @@ const Contacto = () => {
             .then((response) => {
                 setResponse(false)
                 setMensaje(true)
+                e.target[0].value = ""
+                e.target[1].value = ""
+                e.target[2].value = ""
+                e.target[3].value = ""
             })
             .catch((err) => {
                 setResponse(false)
